@@ -917,13 +917,13 @@ function submitPostCardapio() {
       diaSemana.tipoCozinha.map(tipoCozinha => {
         tipoCozinha.Prato.map(prato => {
           console.log("_________ prato: ", prato)
-          let pratos = prato.Opcao.concat(prato.Prato);
+          let pratos = prato.Prato;
           pratos.map(alimento => {
             data.cardapio.push({
-              nmUnidade: unity.Unidade,
-              nmTipoCozinha: tipoCozinha.tipoCozinha,
-              diaSemana: diaSemana.Dia,
-              TipoPrato: prato.tipoPrato,
+              Unidade: unity.Unidade,
+              tipoCozinha: tipoCozinha.tipoCozinha,
+              DiaSemana: diaSemana.Dia,
+              tipoPrato: prato.tipoPrato,
               nmAlimento: alimento.nmAlimento
             });
           });
