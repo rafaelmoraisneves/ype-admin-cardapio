@@ -253,7 +253,6 @@ function cardapioAllItems(items) {
 }
 
 function cardapioItem(item) {
-  console.log('cardapioItem: ', item)
   let daysOfTheWeek = cardapioDayOfTheWeekItems(item.DiaSemana);
 
   let showClass = '';
