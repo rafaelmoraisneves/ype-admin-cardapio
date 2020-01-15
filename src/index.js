@@ -3,7 +3,7 @@ require('@babel/polyfill');
 
 require('./scss/style.scss');
 
-console.log('admin_cardapio.js v0.0.3');
+console.log('admin_cardapio.js v0.0.4');
 
 import $ from 'jquery';
 import moment from 'moment';
@@ -20,23 +20,23 @@ const initialCardapioState = {
   Unidade: '',
   DiaSemana: [
     {
-      Dia: 'Segunda-feira',
+      Dia: 'Segunda-Feira',
       tipoCozinha: []
     },
     {
-      Dia: 'Terça-feira',
+      Dia: 'Terça-Feira',
       tipoCozinha: []
     },
     {
-      Dia: 'Quarta-feira',
+      Dia: 'Quarta-Feira',
       tipoCozinha: []
     },
     {
-      Dia: 'Quinta-feira',
+      Dia: 'Quinta-Feira',
       tipoCozinha: []
     },
     {
-      Dia: 'Sexta-feira',
+      Dia: 'Sexta-Feira',
       tipoCozinha: []
     },
     {
@@ -174,19 +174,26 @@ $(function() {
   getCarpadio().then(function(data) {
     cardapioState.cardapioItems = data.Unidades.map((elm, index) => {
       let newUnity = _.cloneDeep(initialCardapioState);
-      newUnity.Unidade = elm.Unidade;
+      newUnity.Unidade = elm.unidade;
       newUnity.open = false;
       return newUnity;
     });
 
     data.Cardapio.map(elm => {
-      let unityIndex = cardapioState.cardapioItems.findIndex(insideElm => insideElm.Unidade === elm.Unidade);
+      let unityIndex = cardapioState.cardapioItems.findIndex(insideElm => insideElm.unidade === elm.unidade);
 
       elm.DiaSemana.map(anotherElm => {
         let dayOfTheWeekIndex = cardapioState.cardapioItems[unityIndex].DiaSemana.findIndex(
-          elm => elm.Dia === anotherElm.Dia
+          elm => {
+            console.log("elm.Dia__________", elm.Dia, anotherElm.Dia)
+
+            return elm.Dia === anotherElm.Dia
+          }
         );
 
+        console.log("dayOfTheWeekIndex________________", dayOfTheWeekIndex)
+
+        console.log("anotherElm.tipoCozinha_____________", anotherElm.tipoCozinha)
         cardapioState.cardapioItems[unityIndex].DiaSemana[dayOfTheWeekIndex].tipoCozinha = anotherElm.tipoCozinha;
       });
     });
