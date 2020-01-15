@@ -3,7 +3,7 @@ require('@babel/polyfill');
 
 require('./scss/style.scss');
 
-console.log('admin_cardapio.js v0.0.4');
+console.log('admin_cardapio.js v0.0.3');
 
 import $ from 'jquery';
 import moment from 'moment';
@@ -185,15 +185,9 @@ $(function() {
       elm.DiaSemana.map(anotherElm => {
         let dayOfTheWeekIndex = cardapioState.cardapioItems[unityIndex].DiaSemana.findIndex(
           elm => {
-            console.log("elm.Dia__________", elm.Dia, anotherElm.Dia)
-
             return elm.Dia === anotherElm.Dia
           }
         );
-
-        console.log("dayOfTheWeekIndex________________", dayOfTheWeekIndex)
-
-        console.log("anotherElm.tipoCozinha_____________", anotherElm.tipoCozinha)
         cardapioState.cardapioItems[unityIndex].DiaSemana[dayOfTheWeekIndex].tipoCozinha = anotherElm.tipoCozinha;
       });
     });
@@ -437,7 +431,6 @@ async function changeSidePanel(content) {
 async function editFormView(event) {
   let unity;
   let dayOfTheWeek;
-
   if ($(this).hasClass('btn-change-side-panel')) {
     dayOfTheWeek = $(this).data('day-of-the-week');
     unity = $(this).data('unity');
@@ -729,21 +722,30 @@ async function detailsView(event) {
         show = ' show';
       }
 
-      let pratos = elm.Prato.map(elm => {
-        let opcaoInside = elm.Opcao.map(elm => {
-          return `<p class="prato">${elm.nmAlimento}</p>`;
-        }).join('');
+      if(elm.Prato && elm.Prato.length > 0){
+        let pratos = elm.Prato.map(elm => {
 
-        let pratosInside = elm.Prato.map(elm => {
-          return `<p class="prato">${elm.nmAlimento}</p>`;
-        }).join('');
+          if(!elm.Opcao) return
 
-        return `<div class="pratos-item">
-            <p class="tipo-title">${elm.tipoPrato}</p>${pratosInside}${opcaoInside}
-          </div>
-        `;
-      }).join('');
-      return `<div class="tipo-cozinha${show}" data-tipo-cozinha="${elm.tipoCozinha}">${pratos}</div>`;
+          if(!elm.Prato) return
+         
+          let opcaoInside = elm.Opcao.map(elm => {
+            return `<p class="prato">${elm.nmAlimento}</p>`;
+          }).join('');
+
+  
+          let pratosInside = elm.Prato.map(elm => {
+            return `<p class="prato">${elm.nmAlimento}</p>`;
+          }).join('');
+  
+          return `<div class="pratos-item">
+              <p class="tipo-title">${elm.tipoPrato}</p>${pratosInside}${opcaoInside}
+            </div>
+          `;
+        }).join('');
+        return `<div class="tipo-cozinha${show}" data-tipo-cozinha="${elm.tipoCozinha}">${pratos}</div>`;
+      }
+      
     })
     .join('');
 
@@ -929,7 +931,6 @@ function submitPostCardapio() {
     });
   });
 
-  console.log('data', data, JSON.stringify(data));
 
   $.ajax({
     type: 'POST',
