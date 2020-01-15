@@ -933,9 +933,12 @@ function submitPostCardapio() {
   });
 
 
+  console.log("____Data:", data);
+
+
   $.ajax({
     type: 'POST',
-    url: '/Servicos/YPE.WebService.asmx/postCardapio',
+    url: 'http://localhost:13042/YPE.WebService.asmx/postCardapio',
     contentType: 'application/json; charset=ISO-8859-1',
     dataType: 'json',
     data: JSON.stringify(data),
