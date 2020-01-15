@@ -916,6 +916,7 @@ function submitPostCardapio() {
     unity.DiaSemana.map(diaSemana => {
       diaSemana.tipoCozinha.map(tipoCozinha => {
         tipoCozinha.Prato.map(prato => {
+          console.log("_________ prato: ", prato)
           let pratos = prato.Opcao.concat(prato.Prato);
           pratos.map(alimento => {
             data.cardapio.push({
