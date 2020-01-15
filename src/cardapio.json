@@ -1,0 +1,159 @@
+{
+  "Cardapio": [
+    {
+      "Unidade": "Amparo",
+      "DiaSemana": [
+        {
+          "Dia": "Segunda-feira",
+          "tipoCozinha": [
+            {
+              "tipoCozinha": "Caseira",
+              "Prato": [
+                {
+                  "tipoPrato": "Saladas",
+                  "Prato": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Nabos"
+                    }
+                  ],
+                  "Opcao": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Alface"
+                    }
+                  ]
+                },
+                {
+                  "tipoPrato": "Prato Principal",
+                  "Prato": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Carne Seca"
+                    }
+                  ],
+                  "Opcao": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Estrogonofe"
+                    }
+                  ]
+                },
+                {
+                  "tipoPrato": "Guarnição",
+                  "Prato": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Arroz"
+                    }
+                  ],
+                  "Opcao": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Feijão"
+                    }
+                  ]
+                },
+                {
+                  "tipoPrato": "Frutas",
+                  "Prato": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Abacaxi"
+                    }
+                  ],
+                  "Opcao": [
+                    {
+                      "idAlimento": 0,
+                      "nmAlimento": "Banana"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Saladas": [
+    {
+      "idAlimento": 1,
+      "nmAlimento": "Alface"
+    },
+    {
+      "idAlimento": 7,
+      "nmAlimento": "Nabos"
+    }
+  ],
+  "PratosPrincipais": [
+    {
+      "idAlimento": 3,
+      "nmAlimento": "Estrogonofe"
+    },
+    {
+      "idAlimento": 6,
+      "nmAlimento": "Carne Seca"
+    }
+  ],
+  "Guarnicoes": [
+    {
+      "idAlimento": 8,
+      "nmAlimento": "Arroz"
+    },
+    {
+      "idAlimento": 9,
+      "nmAlimento": "Feijão"
+    }
+  ],
+  "Sobremesas": [
+    {
+      "idAlimento": 2,
+      "nmAlimento": "Pudim de Leite"
+    },
+    {
+      "idAlimento": 10,
+      "nmAlimento": "Frango Vegano"
+    },
+    {
+      "idAlimento": 11,
+      "nmAlimento": "Bisteca de porco Vegana"
+    }
+  ],
+  "Frutas": [
+    {
+      "idAlimento": 4,
+      "nmAlimento": "Banana"
+    },
+    {
+      "idAlimento": 5,
+      "nmAlimento": "Abacaxi"
+    }
+  ],
+  "Unidades": [
+    {
+      "Unidade": "Amparo",
+      "Quantidade": 0
+    },
+    {
+      "Unidade": "Salto",
+      "Quantidade": 0
+    },
+    {
+      "Unidade": "Goiânia",
+      "Quantidade": 0
+    },
+    {
+      "Unidade": "Anápolis",
+      "Quantidade": 0
+    },
+    {
+      "Unidade": "Simões Filho",
+      "Quantidade": 0
+    },
+    {
+      "Unidade": "Comercial",
+      "Quantidade": 0
+    }
+  ]
+}

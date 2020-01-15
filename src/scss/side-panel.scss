@@ -1,0 +1,49 @@
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  
+    .side-panel__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      opacity: 0;
+      transition: opacity 400ms ease-in-out;
+  
+      &.reveal {
+        opacity: 0.8;
+      }
+    }
+  
+    .side-panel__content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 640px;
+      height: 100%;
+      transform: translateX(100%);
+      background: $white;
+      box-shadow: 0 0 64px 0 rgba(20, 19, 40, 0.3);
+      transition: transform 400ms ease-in-out;
+  
+      .side-panel__header {
+        background-color: #e6e6eb;
+        height: 64px;
+        width: 100%;
+      }
+  
+      &.open {
+        transform: translateX(0%);
+      }
+    }
+  
+    &.show {
+      display: block;
+    }
+  }

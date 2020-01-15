@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #0070b8;
+      }
+
+      .cls-1 {
+        opacity: 0.25;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-documentos-uteis" transform="translate(-1282.1 228)">
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-1" cx="16" cy="16" r="16" transform="translate(1282.1 -228)"/>
+    <path id="Path_4454" data-name="Path 4454" class="cls-2" d="M28,20h2V32H2V10H4V4H6V0H28ZM8,2V4H24V20h2V2ZM6,6v4h5.422l10,10H22V6ZM28,30V22H20.578l-10-10H4V30Z" transform="translate(1290.099 -220)"/>
+    <rect id="Rectangle_1567" data-name="Rectangle 1567" class="cls-3" width="40" height="40" transform="translate(1282.1 -228)"/>
+  </g>
+</svg>

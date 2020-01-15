@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #0070b8;
+      }
+
+      .cls-1 {
+        opacity: 0.25;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-casa" transform="translate(-1282.1 228)">
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-1" cx="16" cy="16" r="16" transform="translate(1282.1 -228)"/>
+    <path id="Path_4444" data-name="Path 4444" class="cls-2" d="M16,2.578,30.7,17.3,29.3,18.7,28,17.422V30H18V20H14V30H4V17.422L2.7,18.7,1.3,17.3ZM26,28V15.422l-10-10-10,10V28h6V18h8V28Z" transform="translate(1290.099 -220)"/>
+    <rect id="Rectangle_1560" data-name="Rectangle 1560" class="cls-3" width="40" height="40" transform="translate(1282.1 -228)"/>
+  </g>
+</svg>

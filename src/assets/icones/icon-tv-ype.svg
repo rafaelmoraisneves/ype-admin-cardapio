@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #0070b8;
+      }
+
+      .cls-1 {
+        opacity: 0.25;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-tv-ype" transform="translate(-1282.1 228)">
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-1" cx="16" cy="16" r="16" transform="translate(1282.1 -228)"/>
+    <path id="Path_4455" data-name="Path 4455" class="cls-2" d="M32,24.125l-8-4V24H0V8H24v3.875l8-4ZM22,10H2V22H22Zm8,1.109-6,3.016v3.75l6,3.016Z" transform="translate(1290.099 -220)"/>
+    <rect id="Rectangle_1568" data-name="Rectangle 1568" class="cls-3" width="40" height="40" transform="translate(1282.1 -228)"/>
+  </g>
+</svg>

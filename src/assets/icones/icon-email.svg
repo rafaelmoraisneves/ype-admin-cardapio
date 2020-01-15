@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #0070b8;
+      }
+
+      .cls-1 {
+        opacity: 0.25;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-email" transform="translate(-1282.1 228)">
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-1" cx="16" cy="16" r="16" transform="translate(1282.1 -228)"/>
+    <path id="Path_4443" data-name="Path 4443" class="cls-2" d="M32,6V26H0V6ZM2.234,8,16,14.891,29.766,8ZM30,24V10.125L16,17.109,2,10.125V24Z" transform="translate(1290.099 -220)"/>
+    <rect id="Rectangle_1559" data-name="Rectangle 1559" class="cls-3" width="40" height="40" transform="translate(1282.1 -228)"/>
+  </g>
+</svg>

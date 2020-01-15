@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a0d71e;
+      }
+
+      .cls-2 {
+        fill: #0070b8;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="ssa-cad" transform="translate(-1283 228)">
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-1" cx="25.6" cy="25.6" r="25.6" transform="translate(1283 -228)"/>
+    <path id="Path_4431" data-name="Path 4431" class="cls-2" d="M51-25.5H47.813V0H15.938V-25.5H12.75v-9.562H31.875v-6.375H6.375v22.313h9.563v3.188H3.188v-25.5H0V-51H38.25v9.563H35.063v6.375H51ZM3.188-44.625H35.063v-3.187H3.188ZM44.625-25.5h-25.5V-3.187h25.5Zm3.188-6.375H15.938v3.188H47.813ZM35.063-12.75H22.313v-3.187h12.75ZM22.313-6.375V-9.562h9.563v3.188Z" transform="translate(1295.8 -165)"/>
+    <rect id="Rectangle_1547" data-name="Rectangle 1547" class="cls-3" width="64" height="64" transform="translate(1283 -228)"/>
+  </g>
+</svg>
