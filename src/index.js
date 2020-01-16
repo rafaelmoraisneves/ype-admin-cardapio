@@ -171,7 +171,11 @@ $(function() {
   //   attachClickEvents();
   // });
 
-  getCarpadio().then(function(data) {
+  // getCarpadio().then(function(data) {
+
+    var newdata = '{"Cardapio":[{"Unidade":"Amparo","DiaSemana":[{"Dia":"Terça-Feira","tipoCozinha":[{"tipoCozinha":"Caseira","Prato":[{"tipoPrato":"Prato Principal","Prato":[{"nmAlimento":"Frango Assado"}]},{"tipoPrato":"Saladas","Prato":[{"nmAlimento":"Alface"},{"nmAlimento":"Cenoura"}]}]}]}]}],"Saladas":[],"PratosPrincipais":[],"Guarnicoes":[],"Sobremesas":null,"Frutas":null,"Unidades":[{"unidade":"Amparo","Quantidade":0},{"unidade":"Salto","Quantidade":0},{"unidade":"Goiânia","Quantidade":0},{"unidade":"Anápolis","Quantidade":0},{"unidade":"Simões Filho","Quantidade":0},{"unidade":"Comercial","Quantidade":0}]}';
+    var data = JSON.parse(newdata);
+
     cardapioState.cardapioItems = data.Unidades.map((elm, index) => {
       let newUnity = _.cloneDeep(initialCardapioState);
       newUnity.Unidade = elm.unidade;
@@ -199,7 +203,7 @@ $(function() {
     $('.cardapio__list').html(cardapioAllItems(cardapioState.cardapioItems));
     attachClickEvents();
   });
-});
+// });
 
 function toggleAccordion(event) {
   event.preventDefault();
@@ -817,6 +821,7 @@ function openTab(event) {
 }
 
 function formStateToPageState() {
+  console.log("----- formStateToPageState -----")
   let formState = cardapioState.addItemForm;
   let unity = cardapioState.formBeingEdited.unity;
   let dayOfTheWeek = cardapioState.formBeingEdited.dayOfTheWeek;
@@ -830,11 +835,15 @@ function formStateToPageState() {
     tipoCozinha: []
   };
 
+  console.log("line 838: ", formState)
   for (let index in formState) {
     let newTipoCozinha = {
       tipoCozinha: '',
       Prato: []
     };
+
+    console.log("----- index -----", index)
+
     switch (index) {
       case 'caseira':
         newTipoCozinha.tipoCozinha = 'Caseira';
@@ -849,60 +858,71 @@ function formStateToPageState() {
         newTipoCozinha.tipoCozinha = 'Vegetariano';
         break;
     }
+
+    console.log("line 862: ", formState[index])
+
     for (let subIndex in formState[index]) {
       if (formState[index][subIndex].length > 0) {
+        console.log("----- subIndex -----", subIndex)
         switch (subIndex) {
           case 'saladas':
+            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Saladas',
-              Prato: [],
-              Opcao: formState[index][subIndex].map(elm => {
+              Prato: formState[index][subIndex].map(elm => {
                 return { nmAlimento: elm };
-              })
+              }),
+              
             });
             break;
           case 'pratoPrincipal':
+            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Prato Principal',
-              Prato: [],
-              Opcao: formState[index][subIndex].map(elm => {
+              Prato: formState[index][subIndex].map(elm => {
                 return { nmAlimento: elm };
-              })
+              }),
+             
             });
             break;
           case 'guarnicao':
+            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Guarnição',
-              Prato: [],
-              Opcao: formState[index][subIndex].map(elm => {
+              Prato: formState[index][subIndex].map(elm => {
                 return { nmAlimento: elm };
-              })
+              }),
+             
             });
             break;
           case 'sobremesa':
+            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Sobremesa',
-              Prato: [],
-              Opcao: formState[index][subIndex].map(elm => {
+              Prato: formState[index][subIndex].map(elm => {
                 return { nmAlimento: elm };
-              })
+              }),
             });
             break;
           case 'frutas':
+            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Frutas',
-              Prato: [],
-              Opcao: formState[index][subIndex].map(elm => {
+              Prato:  formState[index][subIndex].map(elm => {
                 return { nmAlimento: elm };
               })
+            
             });
             break;
         }
       }
     }
 
+    console.log("~~~~~newTipoCozinha.Prato.length ~~~~~~", newTipoCozinha.Prato.length)
     if (newTipoCozinha.Prato.length > 0) {
       newDiaSemana.tipoCozinha.push(newTipoCozinha);
+
+      console.log("____________newDiaSemana", newDiaSemana);
     }
   }
   cardapioState.cardapioItems[unityIndex].DiaSemana[dayOfTheWeekIndex] = newDiaSemana;
@@ -910,19 +930,34 @@ function formStateToPageState() {
 
 function submitPostCardapio() {
   let data = {
-    cardapio: []
+    Cardapio: []
   };
+
+  console.log("===================================================")
+  console.log(cardapioState)
+  console.log("===================================================")
+  
   cardapioState.cardapioItems.map(unity => {
     unity.DiaSemana.map(diaSemana => {
+      // console.log("diaSemana__", diaSemana.Dia)
       diaSemana.tipoCozinha.map(tipoCozinha => {
         tipoCozinha.Prato.map(prato => {
-          console.log("_________ prato: ", prato)
-          let pratos = prato.Prato;
+
+
+          // console.log("prato.Prato: ", prato.Prato)
+          let pratos = prato.Prato.concat(prato.Prato);
+
+          console.log('pratos--->>', pratos);
+
+
           pratos.map(alimento => {
-            data.cardapio.push({
+            console.log("######## alimento ########", alimento)
+        
+
+            data.Cardapio.push({
               Unidade: unity.Unidade,
-              tipoCozinha: tipoCozinha.tipoCozinha,
               DiaSemana: diaSemana.Dia,
+              tipoCozinha: tipoCozinha.tipoCozinha,
               tipoPrato: prato.tipoPrato,
               nmAlimento: alimento.nmAlimento
             });
@@ -932,9 +967,8 @@ function submitPostCardapio() {
     });
   });
 
-
-  console.log("____Data:", data);
-
+  console.log(JSON.stringify(data))
+  console.log(data)
 
   $.ajax({
     type: 'POST',
@@ -952,3 +986,19 @@ function submitPostCardapio() {
       console.log('postCardapio error:', err);
     });
 }
+
+
+
+// data.Cardapio.push({
+//   Unidade: unity.Unidade,
+//   DiaSemana: [{
+//     "Dia": diaSemana.Dia,
+//     "tipoCozinha": [{
+//       "tipoCozinha": tipoCozinha.tipoCozinha,
+//       "Prato": [{
+//         "tipoPrato": 
+//         "Prato": pratos
+//       }]
+//     }]
+//   }]
+// });
