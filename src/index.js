@@ -954,7 +954,7 @@ function submitPostCardapio() {
             console.log("######## alimento ########", alimento)
         
 
-            data.Cardapio.push({
+            data.cardapio.push({
               Unidade: unity.Unidade,
               DiaSemana: diaSemana.Dia,
               tipoCozinha: tipoCozinha.tipoCozinha,
