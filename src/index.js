@@ -951,7 +951,7 @@ function submitPostCardapio() {
     url: '/Servicos/YPE.WebService.asmx/postCardapio',
     contentType: 'application/json; charset=ISO-8859-1',
     dataType: 'json',
-    data: JSON.stringify(data.cardapio),
+    data: JSON.stringify(data),
     cache: false,
     async: true
   })
