@@ -920,10 +920,7 @@ function formStateToPageState() {
 
 function submitPostCardapio() {
   let data = {
-    cardapio: {
-      cardapio: []
-    }
-    
+    cardapio: []
   };
 
   
@@ -933,7 +930,7 @@ function submitPostCardapio() {
         tipoCozinha.Prato.map(prato => {
           let pratos = prato.Prato.concat(prato.Prato);
           pratos.map(alimento => {
-            data.cardapio.cardapio.push({
+            data.cardapio.push({
               Unidade: unity.Unidade,
               DiaSemana: diaSemana.Dia,
               tipoCozinha: tipoCozinha.tipoCozinha,
