@@ -933,7 +933,7 @@ function submitPostCardapio() {
         tipoCozinha.Prato.map(prato => {
           let pratos = prato.Prato.concat(prato.Prato);
           pratos.map(alimento => {
-            data.cardapio.push({
+            data.cardapio.cardapio.push({
               Unidade: unity.Unidade,
               DiaSemana: diaSemana.Dia,
               tipoCozinha: tipoCozinha.tipoCozinha,
