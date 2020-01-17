@@ -920,7 +920,10 @@ function formStateToPageState() {
 
 function submitPostCardapio() {
   let data = {
-    cardapio: []
+    cardapio: {
+      cardapio: []
+    }
+    
   };
 
   
