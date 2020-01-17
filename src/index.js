@@ -842,7 +842,6 @@ function formStateToPageState() {
       Prato: []
     };
 
-    console.log("----- index -----", index)
 
     switch (index) {
       case 'caseira':
@@ -863,10 +862,8 @@ function formStateToPageState() {
 
     for (let subIndex in formState[index]) {
       if (formState[index][subIndex].length > 0) {
-        console.log("----- subIndex -----", subIndex)
         switch (subIndex) {
           case 'saladas':
-            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Saladas',
               Prato: formState[index][subIndex].map(elm => {
@@ -876,7 +873,6 @@ function formStateToPageState() {
             });
             break;
           case 'pratoPrincipal':
-            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Prato Principal',
               Prato: formState[index][subIndex].map(elm => {
@@ -886,7 +882,6 @@ function formStateToPageState() {
             });
             break;
           case 'guarnicao':
-            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Guarnição',
               Prato: formState[index][subIndex].map(elm => {
@@ -896,7 +891,6 @@ function formStateToPageState() {
             });
             break;
           case 'sobremesa':
-            console.log("==========" + subIndex)
             newTipoCozinha.Prato.push({
               tipoPrato: 'Sobremesa',
               Prato: formState[index][subIndex].map(elm => {
@@ -905,7 +899,7 @@ function formStateToPageState() {
             });
             break;
           case 'frutas':
-            console.log("==========" + subIndex)
+
             newTipoCozinha.Prato.push({
               tipoPrato: 'Frutas',
               Prato:  formState[index][subIndex].map(elm => {
@@ -917,23 +911,18 @@ function formStateToPageState() {
         }
       }
     }
-
-    console.log("~~~~~newTipoCozinha.Prato.length ~~~~~~", newTipoCozinha.Prato.length)
     if (newTipoCozinha.Prato.length > 0) {
       newDiaSemana.tipoCozinha.push(newTipoCozinha);
-
-      console.log("____________newDiaSemana", newDiaSemana);
     }
   }
   cardapioState.cardapioItems[unityIndex].DiaSemana[dayOfTheWeekIndex] = newDiaSemana;
 }
 
 function submitPostCardapio() {
-  let data = [];
+  let data = {
+    cardapio: []
+  };
 
-  console.log("===================================================")
-  console.log(cardapioState)
-  console.log("===================================================")
   
   cardapioState.cardapioItems.map(unity => {
     unity.DiaSemana.map(diaSemana => {
@@ -941,7 +930,7 @@ function submitPostCardapio() {
         tipoCozinha.Prato.map(prato => {
           let pratos = prato.Prato.concat(prato.Prato);
           pratos.map(alimento => {
-            data.push({
+            data.cardapio.push({
               Unidade: unity.Unidade,
               DiaSemana: diaSemana.Dia,
               tipoCozinha: tipoCozinha.tipoCozinha,
@@ -962,7 +951,7 @@ function submitPostCardapio() {
     url: '/Servicos/YPE.WebService.asmx/postCardapio',
     contentType: 'application/json; charset=ISO-8859-1',
     dataType: 'json',
-    data: '[{"Unidade":"Amparo","DiaSemana":"Segunda-Feira","tipoCozinha":null,"tipoPrato":"Prato Principal","nmAlimento":"prato caseiro"},{"Unidade":"Amparo","DiaSemana":"Segunda-Feira","tipoCozinha":null,"tipoPrato":"Prato Principal","nmAlimento":"prato caseiro"},{"Unidade":"Amparo","DiaSemana":"Segunda-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"salada caseira"},{"Unidade":"Amparo","DiaSemana":"Segunda-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"salada caseira"},{"Unidade":"Amparo","DiaSemana":"Segunda-Feira","tipoCozinha":null,"tipoPrato":"Sobremesa","nmAlimento":"sobremesa caseira"},{"Unidade":"Amparo","DiaSemana":"Segunda-Feira","tipoCozinha":null,"tipoPrato":"Sobremesa","nmAlimento":"sobremesa caseira"},{"Unidade":"Amparo","DiaSemana":"Terça-Feira","tipoCozinha":null,"tipoPrato":"Prato Principal","nmAlimento":"Frango Assado"},{"Unidade":"Amparo","DiaSemana":"Terça-Feira","tipoCozinha":null,"tipoPrato":"Prato Principal","nmAlimento":"Frango Assado"},{"Unidade":"Amparo","DiaSemana":"Terça-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"Alface"},{"Unidade":"Amparo","DiaSemana":"Terça-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"Cenoura"},{"Unidade":"Amparo","DiaSemana":"Terça-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"Alface"},{"Unidade":"Amparo","DiaSemana":"Terça-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"Cenoura"},{"Unidade":"Amparo","DiaSemana":"Quarta-Feira","tipoCozinha":null,"tipoPrato":"Prato Principal","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quarta-Feira","tipoCozinha":null,"tipoPrato":"Prato Principal","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quarta-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quarta-Feira","tipoCozinha":null,"tipoPrato":"Saladas","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quarta-Feira","tipoCozinha":null,"tipoPrato":"Sobremesa","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quarta-Feira","tipoCozinha":null,"tipoPrato":"Sobremesa","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quinta-Feira","tipoCozinha":"Caseira","tipoPrato":"Saladas","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quinta-Feira","tipoCozinha":"Caseira","tipoPrato":"Saladas","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quinta-Feira","tipoCozinha":"Caseira","tipoPrato":"Prato Principal","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quinta-Feira","tipoCozinha":"Caseira","tipoPrato":"Prato Principal","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quinta-Feira","tipoCozinha":"Caseira","tipoPrato":"Sobremesa","nmAlimento":"teste"},{"Unidade":"Amparo","DiaSemana":"Quinta-Feira","tipoCozinha":"Caseira","tipoPrato":"Sobremesa","nmAlimento":"teste"}]',
+    data: JSON.stringify(data),
     cache: false,
     async: true
   })
