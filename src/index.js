@@ -929,9 +929,7 @@ function formStateToPageState() {
 }
 
 function submitPostCardapio() {
-  let data = {
-    cardapio: []
-  };
+  let data = [];
 
   console.log("===================================================")
   console.log(cardapioState)
@@ -939,22 +937,11 @@ function submitPostCardapio() {
   
   cardapioState.cardapioItems.map(unity => {
     unity.DiaSemana.map(diaSemana => {
-      // console.log("diaSemana__", diaSemana.Dia)
       diaSemana.tipoCozinha.map(tipoCozinha => {
         tipoCozinha.Prato.map(prato => {
-
-
-          // console.log("prato.Prato: ", prato.Prato)
           let pratos = prato.Prato.concat(prato.Prato);
-
-          console.log('pratos--->>', pratos);
-
-
           pratos.map(alimento => {
-            console.log("######## alimento ########", alimento)
-        
-
-            data.cardapio.push({
+            data.push({
               Unidade: unity.Unidade,
               DiaSemana: diaSemana.Dia,
               tipoCozinha: tipoCozinha.tipoCozinha,
