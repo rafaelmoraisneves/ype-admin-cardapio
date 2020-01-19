@@ -943,9 +943,20 @@ function submitPostCardapio() {
     });
   });
 
-  console.log(JSON.stringify(data.cardapio))
-  console.log(data.cardapio)
   
+  data.cardapio.push({
+    Unidade: "Fim",
+    DiaSemana: "Fim",
+    tipoCozinha: "Fim",
+    tipoPrato: "Fim",
+    nmAlimento: "Fim"
+  });
+
+  
+  console.log(JSON.stringify(data.cardapio));
+  console.log(data.cardapio);
+  
+
   $.ajax({
     type: 'POST',
     url: '/Servicos/YPE.WebService.asmx/postCardapio',
