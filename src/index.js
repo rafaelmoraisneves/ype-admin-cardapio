@@ -943,6 +943,9 @@ function submitPostCardapio() {
     });
   });
 
+  console.log(JSON.stringify(data))
+  console.log(data)
+  
   $.ajax({
     type: 'POST',
     url: '/Servicos/YPE.WebService.asmx/postCardapio',
