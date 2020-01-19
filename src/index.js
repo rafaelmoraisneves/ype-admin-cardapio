@@ -950,25 +950,27 @@ data.cardapio.map(function(c){
   console.log(JSON.stringify(c))
   console.log(c)
 
-  
-  $.ajax({
-    type: 'POST',
-    url: '/Servicos/YPE.WebService.asmx/postCardapio',
-    contentType: 'application/json; charset=ISO-8859-1',
-    dataType: 'json',
-    data: JSON.stringify(c),
-    cache: false,
-    async: true
-  })
-    .done(function(res) {
-      console.log('postCardapio success:', res.d);
+  setInterval(function(){ 
+    $.ajax({
+      type: 'POST',
+      url: '/Servicos/YPE.WebService.asmx/postCardapio',
+      contentType: 'application/json; charset=ISO-8859-1',
+      dataType: 'json',
+      data: JSON.stringify(c),
+      cache: false,
+      async: true
     })
-    .catch(function(err) {
-      console.log('postCardapio error:', err);
-    });
+      .done(function(res) {
+        console.log('postCardapio success:', res.d);
+      })
+      .catch(function(err) {
+        console.log('postCardapio error:', err);
+      });
+  }, 1000);
+
+ 
 
 })
-
 
 
 
