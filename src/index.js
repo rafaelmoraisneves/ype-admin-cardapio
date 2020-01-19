@@ -966,7 +966,7 @@ data.cardapio.map(function(c){
       .catch(function(err) {
         console.log('postCardapio error:', err);
       });
-  }, 1000);
+  }, 2000);
 
 })
 
