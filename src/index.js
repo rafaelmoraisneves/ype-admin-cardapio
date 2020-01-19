@@ -943,15 +943,15 @@ function submitPostCardapio() {
     });
   });
 
-  console.log(JSON.stringify(data))
-  console.log(data)
+  console.log(JSON.stringify(data.cardapio))
+  console.log(data.cardapio)
   
   $.ajax({
     type: 'POST',
     url: '/Servicos/YPE.WebService.asmx/postCardapio',
     contentType: 'application/json; charset=ISO-8859-1',
     dataType: 'json',
-    data: JSON.stringify(data),
+    data: JSON.stringify(data.cardapio),
     cache: false,
     async: true
   })
