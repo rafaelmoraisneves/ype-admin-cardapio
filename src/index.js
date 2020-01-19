@@ -937,41 +937,27 @@ function submitPostCardapio() {
               tipoPrato: prato.tipoPrato,
               nmAlimento: alimento.nmAlimento
             });
-
-           
-
           });
         });
       });
     });
   });
 
-data.cardapio.map(function(c){
-  console.log(JSON.stringify(c))
-  console.log(c)
-
-  setTimeout(function(){ 
-    $.ajax({
-      type: 'POST',
-      url: '/Servicos/YPE.WebService.asmx/postCardapio',
-      contentType: 'application/json; charset=ISO-8859-1',
-      dataType: 'json',
-      data: JSON.stringify(c),
-      cache: false,
-      async: true
-    })
-      .done(function(res) {
-        console.log('postCardapio success:', res.d);
-      })
-      .catch(function(err) {
-        console.log('postCardapio error:', err);
-      });
-  }, 2000);
-
-})
-
-
-
+  $.ajax({
+    type: 'POST',
+    url: '/Servicos/YPE.WebService.asmx/postCardapio',
+    contentType: 'application/json; charset=ISO-8859-1',
+    dataType: 'json',
+    data: JSON.stringify(data),
+    cache: false,
+    async: true
+  })
+  .done(function(res) {
+    console.log('postCardapio success:', res.d);
+  })
+  .catch(function(err) {
+    console.log('postCardapio error:', err);
+  });
 }
 
 
