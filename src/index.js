@@ -950,7 +950,7 @@ data.cardapio.map(function(c){
   console.log(JSON.stringify(c))
   console.log(c)
 
-  setInterval(function(){ 
+  setTimeout(function(){ 
     $.ajax({
       type: 'POST',
       url: '/Servicos/YPE.WebService.asmx/postCardapio',
@@ -967,8 +967,6 @@ data.cardapio.map(function(c){
         console.log('postCardapio error:', err);
       });
   }, 1000);
-
- 
 
 })
 
