@@ -938,31 +938,37 @@ function submitPostCardapio() {
               nmAlimento: alimento.nmAlimento
             });
 
-            console.log(JSON.stringify(data))
-            console.log(data)
-          
-            
-            $.ajax({
-              type: 'POST',
-              url: '/Servicos/YPE.WebService.asmx/postCardapio',
-              contentType: 'application/json; charset=ISO-8859-1',
-              dataType: 'json',
-              data: JSON.stringify(data),
-              cache: false,
-              async: true
-            })
-              .done(function(res) {
-                console.log('postCardapio success:', res.d);
-              })
-              .catch(function(err) {
-                console.log('postCardapio error:', err);
-              });
+           
 
           });
         });
       });
     });
   });
+
+data.cardapio.map(function(c){
+  console.log(JSON.stringify(c))
+  console.log(c)
+
+  
+  $.ajax({
+    type: 'POST',
+    url: '/Servicos/YPE.WebService.asmx/postCardapio',
+    contentType: 'application/json; charset=ISO-8859-1',
+    dataType: 'json',
+    data: JSON.stringify(c),
+    cache: false,
+    async: true
+  })
+    .done(function(res) {
+      console.log('postCardapio success:', res.d);
+    })
+    .catch(function(err) {
+      console.log('postCardapio error:', err);
+    });
+
+})
+
 
 
 
