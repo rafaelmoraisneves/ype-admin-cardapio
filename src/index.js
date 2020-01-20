@@ -445,6 +445,8 @@ async function editFormView(event) {
       .closest('.cardapio__item')
       .data('unity');
   }
+  console.log("Linha 448")
+
 
   let unityItem = cardapioState.cardapioItems.find(elm => elm.Unidade === unity);
 
@@ -458,6 +460,7 @@ async function editFormView(event) {
   let hasCaseira = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Caseira');
   let formCaseira = '';
 
+  console.log("Linha 461")
   if (hasCaseira) {
     formCaseira = formType('Caseira', hasCaseira.Prato);
   } else {
@@ -473,6 +476,8 @@ async function editFormView(event) {
     formReceitaDoChef = formType('Receita do Chef');
   }
 
+  console.log("Linha 477")
+
   let hasBemEstar = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Bem-estar');
   let formBemEstar = '';
 
@@ -485,11 +490,15 @@ async function editFormView(event) {
   let hasVegetariano = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Vegetariano');
   let formVegetariano = '';
 
+  console.log("Linha 491")
+
   if (hasVegetariano) {
     formVegetariano = formType('Vegetariano', hasVegetariano.Prato);
   } else {
     formVegetariano = formType('Vegetariano');
   }
+
+  console.log("Linha 499")
 
   let html = `
     <div class="create-form-view">
@@ -542,6 +551,8 @@ async function editFormView(event) {
   $('.create-form-view__bottom .btn-next').on('click', nextOrSubmitAddForm);
 
   updateAllFormState();
+
+  console.log("Linha 555")
 }
 
 async function createFormView(event) {
