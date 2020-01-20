@@ -445,7 +445,6 @@ async function editFormView(event) {
       .closest('.cardapio__item')
       .data('unity');
   }
-  console.log("Linha 448")
 
 
   let unityItem = cardapioState.cardapioItems.find(elm => elm.Unidade === unity);
@@ -460,29 +459,22 @@ async function editFormView(event) {
   let hasCaseira = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Caseira');
   let formCaseira = '';
 
-  console.log("Linha 461")
   if (hasCaseira) {
-    console.log("Linha 465")
     formCaseira = formType('Caseira', hasCaseira.Prato);
   } else {
-    console.log("Linha 467")
+   
     formCaseira = formType('Caseira');
   }
 
-  console.log("Linha 470")
 
   let hasReceitaDoChef = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Receita do Chef');
   let formReceitaDoChef = '';
-
-  console.log("Linha 475")
 
   if (hasReceitaDoChef) {
     formReceitaDoChef = formType('Receita do Chef', hasReceitaDoChef.Prato);
   } else {
     formReceitaDoChef = formType('Receita do Chef');
   }
-
-  console.log("Linha 477")
 
   let hasBemEstar = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Bem-estar');
   let formBemEstar = '';
@@ -496,7 +488,6 @@ async function editFormView(event) {
   let hasVegetariano = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Vegetariano');
   let formVegetariano = '';
 
-  console.log("Linha 491")
 
   if (hasVegetariano) {
     formVegetariano = formType('Vegetariano', hasVegetariano.Prato);
@@ -504,7 +495,6 @@ async function editFormView(event) {
     formVegetariano = formType('Vegetariano');
   }
 
-  console.log("Linha 499")
 
   let html = `
     <div class="create-form-view">
@@ -558,7 +548,6 @@ async function editFormView(event) {
 
   updateAllFormState();
 
-  console.log("Linha 555")
 }
 
 async function createFormView(event) {
