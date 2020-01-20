@@ -197,7 +197,7 @@ $(function() {
         console.log("insideElm.unidade: ", insideElm.Unidade)
         console.log("elm.unidade: ", elm.Unidade)
         
-        insideElm.Unidade === elm.Unidade
+        return insideElm.Unidade === elm.Unidade
         
       });
 
