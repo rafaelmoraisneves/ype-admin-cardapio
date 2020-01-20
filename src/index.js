@@ -952,26 +952,30 @@ function submitPostCardapio() {
     nmAlimento: "Fim"
   });
 
-  
   console.log(JSON.stringify(data.cardapio));
   console.log(data.cardapio);
-  
 
-  $.ajax({
-    type: 'POST',
-    url: '/Servicos/YPE.WebService.asmx/postCardapio',
-    contentType: 'application/json; charset=ISO-8859-1',
-    dataType: 'json',
-    data: JSON.stringify(data.cardapio),
-    cache: false,
-    async: true
-  })
-  .done(function(res) {
-    console.log('postCardapio success:', res.d);
-  })
-  .catch(function(err) {
-    console.log('postCardapio error:', err);
+  data.cardapio.forEach(function(value){
+
+    console.log("cardapio", value);
+    
+    $.ajax({
+      type: 'POST',
+      url: '/Servicos/YPE.WebService.asmx/postCardapio',
+      contentType: 'application/json; charset=ISO-8859-1',
+      dataType: 'json',
+      data: JSON.stringify(value),
+      cache: false,
+      async: false
+    })
+    .done(function(res) {
+      console.log('postCardapio success:', res.d);
+    })
+    .catch(function(err) {
+      console.log('postCardapio error:', err);
+    });
   });
+  
 }
 
 
