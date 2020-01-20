@@ -192,10 +192,14 @@ $(function() {
 
     data.Cardapio.map(elm => {
       console.log("data.Cardapio.map(elm", elm)
-      let unityIndex = cardapioState.cardapioItems.findIndex(insideElm => insideElm.unidade === elm.unidade);
+      let unityIndex = cardapioState.cardapioItems.findIndex(insideElm => {
 
-      console.log("--->>> insideElm.unidade", insideElm.unidade)
-      console.log("--->>> elm.unidade", elm.unidade)
+        console.log("insideElm.unidade: ", insideElm.unidade)
+        console.log("elm.unidade: ", elm.unidade)
+        
+        insideElm.unidade === elm.unidade
+        
+      });
 
       elm.DiaSemana.map(anotherElm => {
         let dayOfTheWeekIndex = cardapioState.cardapioItems[unityIndex].DiaSemana.findIndex(
