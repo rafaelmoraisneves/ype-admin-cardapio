@@ -188,8 +188,11 @@ $(function() {
       return newUnity;
     });
 
+    console.log("-->> cardapioState.cardapioItems: ", cardapioState.cardapioItems);
+
     data.Cardapio.map(elm => {
-      let unityIndex = cardapioState.cardapioItems.findIndex(insideElm => insideElm.unidade === elm.Unidade);
+      console.log("data.Cardapio.map(elm", elm)
+      let unityIndex = cardapioState.cardapioItems.findIndex(insideElm => insideElm.unidade === elm.unidade);
 
       elm.DiaSemana.map(anotherElm => {
         let dayOfTheWeekIndex = cardapioState.cardapioItems[unityIndex].DiaSemana.findIndex(
