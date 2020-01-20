@@ -180,6 +180,8 @@ $(function() {
       let newUnity = _.cloneDeep(initialCardapioState);
       newUnity.Unidade = elm.unidade;
       newUnity.open = false;
+
+      console.log("-->> newUnity", newUnity);
       return newUnity;
     });
 
@@ -958,7 +960,7 @@ function submitPostCardapio() {
   data.cardapio.forEach(function(value){
 
     console.log("cardapio", value);
-    
+
     $.ajax({
       type: 'POST',
       url: '/Servicos/YPE.WebService.asmx/postCardapio',
