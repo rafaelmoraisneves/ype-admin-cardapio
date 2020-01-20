@@ -1,10 +1,6 @@
 import { camelize } from './helpers';
 
 export const formType = (name, values = []) => {
-  console.log("-- name: ", name)
-  console.log("-- values: ", values)
-
-
   if (values.length === 0)
     return `
         <p class="title">${name}</p>
@@ -32,36 +28,30 @@ export const formType = (name, values = []) => {
   let inputFrutas = '';
 
   if (hasSaladas) {
-    console.log("hasSaladas", hasSaladas)
-
     inputSaladas = inputType(name, 'Saladas', [...hasSaladas.Prato]);
   } else {
     inputSaladas = inputType(name, 'Saladas');
   }
 
   if (hasPratoPrincipal) {
-    console.log("hasPratoPrincipal", hasPratoPrincipal)
     inputPratoPrincipal = inputType(name, 'Prato Principal', [...hasPratoPrincipal.Prato]);
   } else {
     inputPratoPrincipal = inputType(name, 'Prato Principal');
   }
 
   if (hasGuarnicao) {
-    console.log("hasGuarnicao", hasGuarnicao)
     inputGuarnicao = inputType(name, 'Guarnição', [...hasGuarnicao.Prato]);
   } else {
     inputGuarnicao = inputType(name, 'Guarnição');
   }
 
   if (hasSobremesa) {
-    console.log("hasSobremesa", hasSobremesa)
     inputSobremesa = inputType(name, 'Sobremesa', [...hasSobremesa.Prato]);
   } else {
     inputSobremesa = inputType(name, 'Sobremesa');
   }
 
   if (hasFrutas) {
-    console.log("hasFrutas", hasFrutas)
     inputFrutas = inputType(name, 'Frutas', [...hasFrutas.Prato]);
   } else {
     inputFrutas = inputType(name, 'Frutas');
