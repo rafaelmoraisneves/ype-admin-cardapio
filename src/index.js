@@ -462,13 +462,19 @@ async function editFormView(event) {
 
   console.log("Linha 461")
   if (hasCaseira) {
+    console.log("Linha 465")
     formCaseira = formType('Caseira', hasCaseira.Prato);
   } else {
+    console.log("Linha 467")
     formCaseira = formType('Caseira');
   }
 
+  console.log("Linha 470")
+
   let hasReceitaDoChef = dayOfTheWeekItem.tipoCozinha.find(elm => elm.tipoCozinha === 'Receita do Chef');
   let formReceitaDoChef = '';
+
+  console.log("Linha 475")
 
   if (hasReceitaDoChef) {
     formReceitaDoChef = formType('Receita do Chef', hasReceitaDoChef.Prato);
