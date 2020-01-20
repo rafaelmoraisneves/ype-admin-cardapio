@@ -518,8 +518,10 @@ async function editFormView(event) {
     </div>
   `;
 
+  console.log('LOG 1 ----------------------');
   await openSidePanel(html);
-
+  console.log('LOG 2 ----------------------');
+  
   $('.add-option').on('click', function(event) {
     let type = $(this).data('type');
 
