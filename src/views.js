@@ -1,6 +1,10 @@
 import { camelize } from './helpers';
 
 export const formType = (name, values = []) => {
+  console.log("-- name: ", name)
+  console.log("-- values: ", values)
+
+  
   if (values.length === 0)
     return `
         <p class="title">${name}</p>
@@ -16,9 +20,9 @@ export const formType = (name, values = []) => {
       `;
 
   let hasSaladas = values.find(elm => elm.tipoPrato === 'Saladas');
-  let hasPratoPrincipal = values.find(elm => elm.tipoPrato === 'PratosPrincipais');
-  let hasGuarnicao = values.find(elm => elm.tipoPrato === 'Guarnicoes');
-  let hasSobremesa = values.find(elm => elm.tipoPrato === 'Sobremesas');
+  let hasPratoPrincipal = values.find(elm => elm.tipoPrato === 'Prato Principal');
+  let hasGuarnicao = values.find(elm => elm.tipoPrato === 'Guarnição');
+  let hasSobremesa = values.find(elm => elm.tipoPrato === 'Sobremesa');
   let hasFrutas = values.find(elm => elm.tipoPrato === 'Frutas');
 
   let inputSaladas = '';
