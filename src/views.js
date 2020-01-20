@@ -16,9 +16,9 @@ export const formType = (name, values = []) => {
       `;
 
   let hasSaladas = values.find(elm => elm.tipoPrato === 'Saladas');
-  let hasPratoPrincipal = values.find(elm => elm.tipoPrato === 'Prato Principal');
-  let hasGuarnicao = values.find(elm => elm.tipoPrato === 'Guarnição');
-  let hasSobremesa = values.find(elm => elm.tipoPrato === 'Sobremesa');
+  let hasPratoPrincipal = values.find(elm => elm.tipoPrato === 'PratosPrincipais');
+  let hasGuarnicao = values.find(elm => elm.tipoPrato === 'Guarnicoes');
+  let hasSobremesa = values.find(elm => elm.tipoPrato === 'Sobremesas');
   let hasFrutas = values.find(elm => elm.tipoPrato === 'Frutas');
 
   let inputSaladas = '';
