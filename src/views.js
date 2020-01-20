@@ -4,7 +4,7 @@ export const formType = (name, values = []) => {
   console.log("-- name: ", name)
   console.log("-- values: ", values)
 
-  
+
   if (values.length === 0)
     return `
         <p class="title">${name}</p>
@@ -32,31 +32,31 @@ export const formType = (name, values = []) => {
   let inputFrutas = '';
 
   if (hasSaladas) {
-    inputSaladas = inputType(name, 'Saladas', [...hasSaladas.Prato, ...hasSaladas.Opcao]);
+    inputSaladas = inputType(name, 'Saladas', [...hasSaladas.Prato]);
   } else {
     inputSaladas = inputType(name, 'Saladas');
   }
 
   if (hasPratoPrincipal) {
-    inputPratoPrincipal = inputType(name, 'Prato Principal', [...hasPratoPrincipal.Prato, ...hasPratoPrincipal.Opcao]);
+    inputPratoPrincipal = inputType(name, 'Prato Principal', [...hasPratoPrincipal.Prato]);
   } else {
     inputPratoPrincipal = inputType(name, 'Prato Principal');
   }
 
   if (hasGuarnicao) {
-    inputGuarnicao = inputType(name, 'Guarnição', [...hasGuarnicao.Prato, ...hasGuarnicao.Opcao]);
+    inputGuarnicao = inputType(name, 'Guarnição', [...hasGuarnicao.Prato]);
   } else {
     inputGuarnicao = inputType(name, 'Guarnição');
   }
 
   if (hasSobremesa) {
-    inputSobremesa = inputType(name, 'Sobremesa', [...hasSobremesa.Prato, ...hasSobremesa.Opcao]);
+    inputSobremesa = inputType(name, 'Sobremesa', [...hasSobremesa.Prato]);
   } else {
     inputSobremesa = inputType(name, 'Sobremesa');
   }
 
   if (hasFrutas) {
-    inputFrutas = inputType(name, 'Frutas', [...hasFrutas.Prato, ...hasFrutas.Opcao]);
+    inputFrutas = inputType(name, 'Frutas', [...hasFrutas.Prato]);
   } else {
     inputFrutas = inputType(name, 'Frutas');
   }
