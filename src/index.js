@@ -175,8 +175,11 @@ $(function() {
 
     // var newdata = '{"Cardapio":[{"Unidade":"Amparo","DiaSemana":[{"Dia":"Terça-Feira","tipoCozinha":[{"tipoCozinha":"Caseira","Prato":[{"tipoPrato":"Prato Principal","Prato":[{"nmAlimento":"Frango Assado"}]},{"tipoPrato":"Saladas","Prato":[{"nmAlimento":"Alface"},{"nmAlimento":"Cenoura"}]}]}]}]}],"Saladas":[],"PratosPrincipais":[],"Guarnicoes":[],"Sobremesas":null,"Frutas":null,"Unidades":[{"unidade":"Amparo","Quantidade":0},{"unidade":"Salto","Quantidade":0},{"unidade":"Goiânia","Quantidade":0},{"unidade":"Anápolis","Quantidade":0},{"unidade":"Simões Filho","Quantidade":0},{"unidade":"Comercial","Quantidade":0}]}';
     // var data = JSON.parse(newdata);
+    console.log("-->> data", data);
 
     cardapioState.cardapioItems = data.Unidades.map((elm, index) => {
+      console.log("-->> elm", elm);
+
       let newUnity = _.cloneDeep(initialCardapioState);
       newUnity.Unidade = elm.unidade;
       newUnity.open = false;
