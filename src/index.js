@@ -431,6 +431,7 @@ async function changeSidePanel(content) {
 }
 
 async function editFormView(event) {
+  console.log('-- editFormView --')
   let unity;
   let dayOfTheWeek;
   if ($(this).hasClass('btn-change-side-panel')) {
