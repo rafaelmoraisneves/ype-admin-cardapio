@@ -12,7 +12,7 @@ export const formType = (name, values = []) => {
 
         ${inputType(name, 'Sobremesa')}
 
-        ${inputType(name, 'Fruta')}
+        ${inputType(name, 'Frutas')}
       `;
 
   let hasSaladas = values.find(elm => elm.tipoPrato === 'Saladas');
