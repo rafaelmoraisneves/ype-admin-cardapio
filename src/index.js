@@ -431,7 +431,6 @@ async function changeSidePanel(content) {
 }
 
 async function editFormView(event) {
-  console.log('-- editFormView --')
   let unity;
   let dayOfTheWeek;
   if ($(this).hasClass('btn-change-side-panel')) {
@@ -523,9 +522,7 @@ async function editFormView(event) {
     </div>
   `;
 
-  console.log('LOG 1 ----------------------');
   await openSidePanel(html);
-  console.log('LOG 2 ----------------------');
   
   $('.add-option').on('click', function(event) {
     let type = $(this).data('type');
@@ -828,7 +825,6 @@ function openTab(event) {
 }
 
 function formStateToPageState() {
-  console.log("----- formStateToPageState -----")
   let formState = cardapioState.addItemForm;
   let unity = cardapioState.formBeingEdited.unity;
   let dayOfTheWeek = cardapioState.formBeingEdited.dayOfTheWeek;
@@ -842,7 +838,6 @@ function formStateToPageState() {
     tipoCozinha: []
   };
 
-  console.log("line 838: ", formState)
   for (let index in formState) {
     let newTipoCozinha = {
       tipoCozinha: '',
@@ -865,7 +860,6 @@ function formStateToPageState() {
         break;
     }
 
-    console.log("line 862: ", formState[index])
 
     for (let subIndex in formState[index]) {
       if (formState[index][subIndex].length > 0) {
@@ -930,7 +924,7 @@ function submitPostCardapio() {
     cardapio: []
   };
 
-  
+  console.log("::::::::cardapioState.cardapioItems", cardapioState.cardapioItems)
   cardapioState.cardapioItems.map(unity => {
     unity.DiaSemana.map(diaSemana => {
       diaSemana.tipoCozinha.map(tipoCozinha => {
@@ -963,8 +957,6 @@ function submitPostCardapio() {
   console.log(data.cardapio);
 
   data.cardapio.forEach(function(value){
-
-    console.log("cardapio", value);
 
     $.ajax({
       type: 'POST',
