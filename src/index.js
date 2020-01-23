@@ -860,6 +860,7 @@ function formStateToPageState() {
         break;
     }
 
+    console.log("---->> formState: ", formState)
 
     for (let subIndex in formState[index]) {
       if (formState[index][subIndex].length > 0) {
