@@ -75,8 +75,8 @@ export const inputType = (name, type, values = []) => {
     return `
         <p class="input-title">${type}</p>
         <div class="input-container" data-type="${camelize(name)}-${camelize(type)}">
-          <p class="input-help">Adicione a opção de fruta</p>
-          <input type="text" placeholder="Insira a opção de salada" name="${camelize(name)}-${camelize(type)}[]"/>
+          <p class="input-help">Adicione a opção de ${type}</p>
+          <input type="text" placeholder="Insira a opção de ${type}" name="${camelize(name)}-${camelize(type)}[]"/>
         </div>
         <button class="add-option" data-type="${camelize(name)}-${camelize(type)}">
           <i class="ms-Icon ms-Icon--Add" aria-hidden="true"></i> Adicionar nova opção
@@ -86,8 +86,8 @@ export const inputType = (name, type, values = []) => {
   let options = values.map(elm => {
     return `
       <div class="input-container" data-type="${camelize(name)}-${camelize(type)}">
-        <p class="input-help">Adicione a opção de fruta</p>
-        <input type="text" placeholder="Insira a opção de salada" name="${camelize(name)}-${camelize(type)}[]" value="${
+        <p class="input-help">Adicione a opção de ${type}</p>
+        <input type="text" placeholder="Insira a opção de ${type}" name="${camelize(name)}-${camelize(type)}[]" value="${
       elm.nmAlimento
     }"/>
       </div>
