@@ -529,8 +529,8 @@ async function editFormView(event) {
 
     $(`.input-container[data-type="${type}"]`).last().after(`
       <div class="input-container" data-type="${type}">
-        <p class="input-help">Adicione a opção de ${type}</p>
-        <input type="text" placeholder="Insira a opção de ${type}" name="caseiro-salada[]"/>
+        <p class="input-help">Adicione a opção</p>
+        <input type="text" placeholder="Insira a opção" name="caseiro-salada[]"/>
         <div class="remove-input" data-type="${type}"><i class="ms-Icon ms-Icon--ChromeClose" aria-hidden="true"></i></div>
       </div>`);
 
@@ -599,8 +599,8 @@ async function createFormView(event) {
 
     $(`.input-container[data-type="${type}"]`).last().after(`
       <div class="input-container" data-type="${type}">
-        <p class="input-help">Adicione a opção de ${type}</p>
-        <input type="text" placeholder="Insira a opção de ${type}" name="${type}[]"/>
+        <p class="input-help">Adicione a opção</p>
+        <input type="text" placeholder="Insira a opção" name="${type}[]"/>
         <div class="remove-input" data-type="${type}"><i class="ms-Icon ms-Icon--ChromeClose" aria-hidden="true"></i></div>
       </div>`);
 
