@@ -307,9 +307,13 @@ function getItemAction(type) {
     case 'add':
       return `
         <div class="item-actions__add-item">
-          <i class="ms-Icon ms-Icon--Add add-icon" aria-hidden="true"></i>
+          <img src="/SitePages/src/icones/icon-mais-azul.png">
+        
         </div>
       `;
+
+      // <i class="ms-Icon ms-Icon--Add add-icon" aria-hidden="true"></i>
+
     case 'edit':
       return `
         <div class="item-actions__edit-item">
@@ -626,7 +630,7 @@ function removeInput(event) {
     .parent()
     .remove();
 
-  updateByTypeAndSubtype(type, subtype);
+  updateByTypeAndSubtype(type, subtype); 
 }
 
 function nextOrSubmitAddForm(event) {
