@@ -733,13 +733,12 @@ async function detailsView(event) {
       if(elm.Prato && elm.Prato.length > 0){
         let pratos = elm.Prato.map(elm => {
 
-          if(!elm.Opcao) return
 
           if(!elm.Prato) return
          
-          let opcaoInside = elm.Opcao.map(elm => {
-            return `<p class="prato">${elm.nmAlimento}</p>`;
-          }).join('');
+          // let opcaoInside = elm.Opcao.map(elm => {
+          //   return `<p class="prato">${elm.nmAlimento}</p>`;
+          // }).join('');
 
   
           let pratosInside = elm.Prato.map(elm => {
@@ -747,7 +746,7 @@ async function detailsView(event) {
           }).join('');
   
           return `<div class="pratos-item">
-              <p class="tipo-title">${elm.tipoPrato}</p>${pratosInside}${opcaoInside}
+              <p class="tipo-title">${elm.tipoPrato}</p>${pratosInside}
             </div>
           `;
         }).join('');
