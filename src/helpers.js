@@ -1,3 +1,5 @@
+var unorm = require('unorm');
+
 export function delay(ms) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -14,6 +16,9 @@ export const camelize = str => {
 };
 
 export const removeDiacritics = str => {
-  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  //return str.replace(/[\u0300-\u036f]/g, '');
+ 
+  return unorm.nfd(str).replace(/[\u0300-\u036f]/g, '');
+  //return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  
+  
 };
