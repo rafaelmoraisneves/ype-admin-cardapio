@@ -14,6 +14,6 @@ export const camelize = str => {
 };
 
 export const removeDiacritics = str => {
-  // return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  return str.replace(/[\u0300-\u036f]/g, '');
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  //return str.replace(/[\u0300-\u036f]/g, '');
 };
