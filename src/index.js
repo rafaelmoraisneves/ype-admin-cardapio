@@ -957,9 +957,11 @@ function submitPostCardapio() {
   console.log(JSON.stringify(data.cardapio));
   console.log(data.cardapio);
 
+  JsLoadingOverlay.show({'spinnerIcon': 'ball-pulse'});
+
   data.cardapio.forEach(function(value){
 
-    JsLoadingOverlay.show({'spinnerIcon': 'ball-pulse'});
+    
     $.ajax({
       type: 'POST',
       url: '/Servicos/YPE.WebService.asmx/postCardapio',
@@ -971,13 +973,15 @@ function submitPostCardapio() {
     })
     .done(function(res) {
       console.log('postCardapio success:', res.d);
-      JsLoadingOverlay.hide();
+      
     })
     .catch(function(err) {
       console.log('postCardapio error:', err);
-      JsLoadingOverlay.hide(); 
+
     });
   });
+
+  JsLoadingOverlay.hide();
   
 }
 
