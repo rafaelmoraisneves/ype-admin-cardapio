@@ -954,8 +954,6 @@ function submitPostCardapio() {
     nmAlimento: "Fim"
   });
 
-  JsLoadingOverlay.show({'spinnerIcon': 'ball-pulse'});
-
   data.cardapio.forEach(function(value){
 
     
@@ -976,8 +974,4 @@ function submitPostCardapio() {
 
     });
   });
-
-  setTimeout(function(){
-    JsLoadingOverlay.hide();
-  }, 5000)
 }
