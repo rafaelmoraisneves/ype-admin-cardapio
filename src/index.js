@@ -929,7 +929,7 @@ function submitPostCardapio() {
     unity.DiaSemana.map(diaSemana => {
       diaSemana.tipoCozinha.map(tipoCozinha => {
         tipoCozinha.Prato.map(prato => {
-          let pratos = prato.Prato.concat(prato.Prato);
+          let pratos = prato.Prato;
           pratos.map(alimento => {
             data.cardapio.push({
               Unidade: unity.Unidade,
