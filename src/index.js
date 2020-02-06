@@ -711,7 +711,21 @@ async function detailsView(event) {
 
   let dayOfTheWeekItem = unityItem.DiaSemana.find(elm => elm.Dia === dayOfTheWeek);
 
-  let tipoCozinha = dayOfTheWeekItem.tipoCozinha
+  console.log("---->>> dayOfTheWeekItem.tipoCozinha: ", dayOfTheWeekItem.tipoCozinha);
+
+  const arrCozinha = [];
+  const filterCozinha = (cozinha, categoria) => cozinha.tipoCozinha === categoria
+
+  arrCozinha[0] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Caseira'))
+
+  arrCozinha[1] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Receita do Chef'))
+
+  arrCozinha[2] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Bem-estar'))
+
+  arrCozinha[3] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Vegetariano'))
+
+
+  let tipoCozinha = arrCozinha
     .map((elm, index) => {
       let selected = '';
       if (index === 0) {
