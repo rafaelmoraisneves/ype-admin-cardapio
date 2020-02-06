@@ -954,9 +954,6 @@ function submitPostCardapio() {
     nmAlimento: "Fim"
   });
 
-  console.log(JSON.stringify(data.cardapio));
-  console.log(data.cardapio);
-
   JsLoadingOverlay.show({'spinnerIcon': 'ball-pulse'});
 
   data.cardapio.forEach(function(value){
@@ -980,24 +977,7 @@ function submitPostCardapio() {
     });
   });
 
+  setTimeout(function(){
     JsLoadingOverlay.hide();
-
-  
-  
+  }, 5000)
 }
-
-
-
-// data.Cardapio.push({
-//   Unidade: unity.Unidade,
-//   DiaSemana: [{
-//     "Dia": diaSemana.Dia,
-//     "tipoCozinha": [{
-//       "tipoCozinha": tipoCozinha.tipoCozinha,
-//       "Prato": [{
-//         "tipoPrato": 
-//         "Prato": pratos
-//       }]
-//     }]
-//   }]
-// });
