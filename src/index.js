@@ -652,6 +652,8 @@ async function nextAddForm() {
 }
 
 function submitAddForm() {
+  JsLoadingOverlay.show({'spinnerIcon': 'ball-pulse'});
+
   let canSubmit = false;
   for (let item in cardapioState.addItemForm) {
     for (let insideItem in cardapioState.addItemForm[item]) {
@@ -670,6 +672,8 @@ function submitAddForm() {
   closeSidePanel();
 
   submitPostCardapio();
+  
+  JsLoadingOverlay.hide();
 }
 
 function updateAddFormState(event) {
@@ -954,7 +958,7 @@ function submitPostCardapio() {
     nmAlimento: "Fim"
   });
 
-  JsLoadingOverlay.show({'spinnerIcon': 'ball-pulse'});
+ 
 
   data.cardapio.forEach(function(value){
 
@@ -977,7 +981,5 @@ function submitPostCardapio() {
     });
   });
 
-  setTimeout(function(){
-    JsLoadingOverlay.hide();
-  }, 5000)
+  JsLoadingOverlay.hide();
 }
