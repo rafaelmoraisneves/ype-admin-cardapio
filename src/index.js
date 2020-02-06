@@ -672,8 +672,7 @@ function submitAddForm() {
   closeSidePanel();
 
   submitPostCardapio();
-  
-  JsLoadingOverlay.hide();
+ 
 }
 
 function updateAddFormState(event) {
