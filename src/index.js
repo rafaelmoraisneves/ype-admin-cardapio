@@ -2,6 +2,7 @@ require('core-js');
 require('@babel/polyfill');
 
 require('./scss/style.scss');
+require('../node_modules/js-loading-overlay/dist/js-loading-overlay');
 
 console.log('admin_cardapio.js v0.0.3');
 
@@ -958,7 +959,7 @@ function submitPostCardapio() {
 
   data.cardapio.forEach(function(value){
 
-    $("body").loading();
+    JsLoadingOverlay.show({'spinnerIcon': 'ball-pulse'});
     $.ajax({
       type: 'POST',
       url: '/Servicos/YPE.WebService.asmx/postCardapio',
@@ -970,11 +971,11 @@ function submitPostCardapio() {
     })
     .done(function(res) {
       console.log('postCardapio success:', res.d);
-      $("body").loading('stop');
+      JsLoadingOverlay.hide();
     })
     .catch(function(err) {
       console.log('postCardapio error:', err);
-      $("body").loading('stop');
+      JsLoadingOverlay.hide(); 
     });
   });
   
