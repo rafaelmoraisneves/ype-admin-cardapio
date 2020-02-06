@@ -713,16 +713,16 @@ async function detailsView(event) {
 
   console.log("---->>> dayOfTheWeekItem.tipoCozinha: ", dayOfTheWeekItem.tipoCozinha);
 
-  const arrCozinha = [];
-  const filterCozinha = (cozinha, categoria) => cozinha.tipoCozinha === categoria
+  var arrCozinha = [];
 
-  arrCozinha[0] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Caseira'))
+  arrCozinha[0] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Caseira')
 
-  arrCozinha[1] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Receita do Chef'))
+  arrCozinha[1] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Receita do Chef')
 
-  arrCozinha[2] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Bem-estar'))
+  arrCozinha[2] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Bem-estar')
 
-  arrCozinha[3] = dayOfTheWeekItem.tipoCozinha.filter(filterCozinha(cozinha, 'Vegetariano'))
+  arrCozinha[3] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Vegetariano')
+
 
 
   let tipoCozinha = arrCozinha
