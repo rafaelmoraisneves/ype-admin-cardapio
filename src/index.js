@@ -969,7 +969,6 @@ function submitPostCardapio() {
       dataType: 'json',
       data: JSON.stringify(value),
       cache: false,
-      async: false
     })
     .done(function(res) {
       console.log('postCardapio success:', res.d);
@@ -981,9 +980,8 @@ function submitPostCardapio() {
     });
   });
 
-  setTimeout(function() {
     JsLoadingOverlay.hide();
-  }, 5000);
+
   
   
 }
