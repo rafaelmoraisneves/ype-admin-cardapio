@@ -981,7 +981,10 @@ function submitPostCardapio() {
     });
   });
 
-  JsLoadingOverlay.hide();
+  setTimeout(function() {
+    JsLoadingOverlay.hide();
+  }, 5000);
+  
   
 }
 
