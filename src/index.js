@@ -958,6 +958,7 @@ function submitPostCardapio() {
 
   data.cardapio.forEach(function(value){
 
+    $("body").loading();
     $.ajax({
       type: 'POST',
       url: '/Servicos/YPE.WebService.asmx/postCardapio',
@@ -969,9 +970,11 @@ function submitPostCardapio() {
     })
     .done(function(res) {
       console.log('postCardapio success:', res.d);
+      $("body").loading('stop');
     })
     .catch(function(err) {
       console.log('postCardapio error:', err);
+      $("body").loading('stop');
     });
   });
   
