@@ -715,13 +715,13 @@ async function detailsView(event) {
 
   var arrCozinha = [];
 
-  arrCozinha[0] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Caseira')
+  arrCozinha[0] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Caseira')
 
-  arrCozinha[1] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Receita do Chef')
+  arrCozinha[1] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Receita do Chef')
 
-  arrCozinha[2] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Bem-estar')
+  arrCozinha[2] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Bem-estar')
 
-  arrCozinha[3] = dayOfTheWeekItem.tipoCozinha.filter(cozinha => cozinha.tipoCozinha === 'Vegetariano')
+  arrCozinha[3] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Vegetariano')
 
 
 
