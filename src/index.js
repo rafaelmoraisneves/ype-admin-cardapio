@@ -740,11 +740,11 @@ async function detailsView(event) {
       if(elm.Prato && elm.Prato.length > 0){
 
         var arrPrato = [];
-        arrPrato[0] = elm.Prato.find(prato => cozinha.tipoPrato === 'Saladas')
-        arrPrato[1] = elm.Prato.find(prato => cozinha.tipoPrato === 'Prato principal')
-        arrPrato[2] = elm.Prato.find(prato => cozinha.tipoPrato === 'Guarnição')
-        arrPrato[3] = elm.Prato.find(prato => cozinha.tipoPrato === 'Sobremesa')
-        arrPrato[3] = elm.Prato.find(prato => cozinha.tipoPrato === 'Fruta')
+        arrPrato[0] = elm.Prato.find(prato => prato.tipoPrato === 'Saladas')
+        arrPrato[1] = elm.Prato.find(prato => prato.tipoPrato === 'Prato principal')
+        arrPrato[2] = elm.Prato.find(prato => prato.tipoPrato === 'Guarnição')
+        arrPrato[3] = elm.Prato.find(prato => prato.tipoPrato === 'Sobremesa')
+        arrPrato[3] = elm.Prato.find(prato => prato.tipoPrato === 'Fruta')
 
         let pratos = arrPrato.map(elm => {
 
