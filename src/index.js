@@ -711,19 +711,11 @@ async function detailsView(event) {
 
   let dayOfTheWeekItem = unityItem.DiaSemana.find(elm => elm.Dia === dayOfTheWeek);
 
-  console.log("---->>> dayOfTheWeekItem.tipoCozinha: ", dayOfTheWeekItem.tipoCozinha);
-
   var arrCozinha = [];
-
   arrCozinha[0] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Caseira')
-
   arrCozinha[1] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Receita do Chef')
-
   arrCozinha[2] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Bem-estar')
-
   arrCozinha[3] = dayOfTheWeekItem.tipoCozinha.find(cozinha => cozinha.tipoCozinha === 'Vegetariano')
-
-
 
   let tipoCozinha = arrCozinha
     .map((elm, index) => {
@@ -746,7 +738,15 @@ async function detailsView(event) {
       }
 
       if(elm.Prato && elm.Prato.length > 0){
-        let pratos = elm.Prato.map(elm => {
+
+        var arrPrato = [];
+        arrPrato[0] = elm.Prato.find(prato => cozinha.tipoPrato === 'Saladas')
+        arrPrato[1] = elm.Prato.find(prato => cozinha.tipoPrato === 'Prato principal')
+        arrPrato[2] = elm.Prato.find(prato => cozinha.tipoPrato === 'Guarnição')
+        arrPrato[3] = elm.Prato.find(prato => cozinha.tipoPrato === 'Sobremesa')
+        arrPrato[3] = elm.Prato.find(prato => cozinha.tipoPrato === 'Fruta')
+
+        let pratos = arrPrato.map(elm => {
 
 
           if(!elm.Prato) return
