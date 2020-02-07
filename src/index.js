@@ -741,10 +741,10 @@ async function detailsView(event) {
 
         var arrPrato = [];
         arrPrato[0] = elm.Prato.find(prato => prato.tipoPrato === 'Saladas')
-        arrPrato[1] = elm.Prato.find(prato => prato.tipoPrato === 'Prato principal')
+        arrPrato[1] = elm.Prato.find(prato => prato.tipoPrato === 'Prato Principal')
         arrPrato[2] = elm.Prato.find(prato => prato.tipoPrato === 'Guarnição')
         arrPrato[3] = elm.Prato.find(prato => prato.tipoPrato === 'Sobremesa')
-        arrPrato[3] = elm.Prato.find(prato => prato.tipoPrato === 'Fruta')
+        arrPrato[3] = elm.Prato.find(prato => prato.tipoPrato === 'Frutas')
 
         let pratos = arrPrato.map(elm => {
 
