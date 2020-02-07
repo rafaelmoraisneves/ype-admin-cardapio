@@ -719,6 +719,8 @@ async function detailsView(event) {
 
   let tipoCozinha = arrCozinha
     .map((elm, index) => {
+
+      if(!elm) return;
       let selected = '';
       if (index === 0) {
         selected = ' selected';
