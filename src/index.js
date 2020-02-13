@@ -735,7 +735,7 @@ async function detailsView(event) {
     .map((elm, index) => {
       let show = '';
 
-      if (index === 0) {
+      if (index === 1) {
         show = ' show';
       }
 
